@@ -19,6 +19,10 @@ public class Main {
             case 3 :
                 Lab3.lab3();
             break;
+            case 4 :
+                Lab4.lab4();
+            break;
+
 
         }
     }
