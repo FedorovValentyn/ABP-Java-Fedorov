@@ -26,6 +26,7 @@ public class Lab7 extends JFrame {
 
     private void initComponents() {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new Dimension(800, 400)); // Set minimum size to 600x600
 
         questionLabel = new JLabel();
         answerButtons = new JButton[4];
@@ -79,7 +80,7 @@ public class Lab7 extends JFrame {
             currentQuestionIndex = index;
         } else {
             // Display a message or perform some action when all questions are answered
-            JOptionPane.showMessageDialog(this, "Вітаю,ти провдожуєш своє навчання на ПП.");
+            JOptionPane.showMessageDialog(this, "Congratulations! You've answered all questions.");
             System.exit(0);
         }
     }
@@ -105,7 +106,9 @@ public class Lab7 extends JFrame {
     public static void lab7() {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Lab7().setVisible(true);
+                Lab7 frame = new Lab7();
+                frame.setLocationRelativeTo(null); // Set the window to appear in the center
+                frame.setVisible(true);
             }
         });
     }
