@@ -50,6 +50,9 @@ public class Main {
             case 10:
                 Lab10.lab10();
             break;
+            case 11:
+                Lab11.lab11();
+            break;
         }
     }
 }
