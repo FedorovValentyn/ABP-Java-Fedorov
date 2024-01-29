@@ -26,7 +26,7 @@ public class Lab7 extends JFrame {
 
     private void initComponents() {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new Dimension(800, 400)); // Set minimum size to 600x600
+        setMinimumSize(new Dimension(800, 400));
 
         questionLabel = new JLabel();
         answerButtons = new JButton[4];
@@ -107,7 +107,7 @@ public class Lab7 extends JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Lab7 frame = new Lab7();
-                frame.setLocationRelativeTo(null); // Set the window to appear in the center
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
             }
         });
