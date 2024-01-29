@@ -37,6 +37,10 @@ public class Main {
             break;
             case 6:
                 Lab6.lab6();
+            break;
+            case 7 :
+                Lab7.lab7();
+             break;
         }
     }
 }

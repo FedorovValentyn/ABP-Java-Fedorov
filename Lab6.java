@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Lab6 extends JFrame {
 
-    private JPanel jPanel1; // Add this line to declare the JPanel
+    private JPanel jPanel1;
 
     public Lab6() {
         initComponents();
@@ -20,7 +20,7 @@ public class Lab6 extends JFrame {
         JButton drawArcButton = new JButton("Намалювати дугу");
         JButton drawLineButton = new JButton("Намалювати лінію");
 
-        jPanel1 = new JPanel(); // Instantiate the JPanel
+        jPanel1 = new JPanel();
 
         drawPolylineButton.addActionListener(new ActionListener() {
             @Override
@@ -45,8 +45,7 @@ public class Lab6 extends JFrame {
         drawLineButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Implement code to draw a line
-                // For example, you can use Graphics2D to draw on a JPanel
+
                 Graphics g = jPanel1.getGraphics();
                 g.drawLine(100, 100, 300, 300);
             }
