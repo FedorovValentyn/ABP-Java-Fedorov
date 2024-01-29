@@ -1,8 +1,11 @@
 package MyPackage;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.swing.SwingUtilities;
+import java.awt.EventQueue;
 
 public class Main {
     public static void main(String[] args) {
@@ -22,8 +25,18 @@ public class Main {
             case 4 :
                 Lab4.lab4();
             break;
-
-
+            case 5 :
+                EventQueue.invokeLater(() -> {
+                    try {
+                        Lab5 lab5 = new Lab5();
+                        lab5.setVisible(true);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                });
+            break;
+            case 6:
+                Lab6.lab6();
         }
     }
 }
