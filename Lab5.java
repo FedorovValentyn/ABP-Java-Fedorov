@@ -73,8 +73,10 @@ public class Lab5 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        ImageIcon imgThisImg = new ImageIcon("src/main/java/MyPackage/img/newgif.gif");
 
-        jLabel6.setIcon(new ImageIcon("C:\\Users\\1\\Desktop\\icon.png")); // Видаліть зайві лапки з назви файлу
+        jLabel6.setIcon(imgThisImg);
+
         jLabel6.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 jLabel6PropertyChange(evt); // Визначте цей метод, щоб обробити подію зміни властивості
@@ -101,7 +103,7 @@ public class Lab5 extends javax.swing.JFrame {
                                                 .addGap(11, 11, 11)
                                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                         .addGroup(jPanel1Layout.createSequentialGroup()
-                                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addComponent(jLabel1)
                                                                 .addGap(42, 42, 42))
@@ -156,7 +158,7 @@ public class Lab5 extends javax.swing.JFrame {
                                                 .addGap(27, 27, 27))
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                                 .addGap(21, 21, 21)
-                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(18, 18, 18)
                                                 .addComponent(jRadioButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
