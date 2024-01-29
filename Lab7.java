@@ -79,7 +79,6 @@ public class Lab7 extends JFrame {
 
             currentQuestionIndex = index;
         } else {
-            // Display a message or perform some action when all questions are answered
             JOptionPane.showMessageDialog(this, "Congratulations! You've answered all questions.");
             System.exit(0);
         }
@@ -98,7 +97,6 @@ public class Lab7 extends JFrame {
                 System.exit(0);
             }
 
-            // Move to the next question
             showQuestion(currentQuestionIndex + 1);
         }
     }
