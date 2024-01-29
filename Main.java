@@ -45,7 +45,10 @@ public class Main {
                 Lab8.lab8();
             break;
             case 9:
-
+                Lab9.lab9();
+            break;
+            case 10:
+                Lab10.lab10();
             break;
         }
     }

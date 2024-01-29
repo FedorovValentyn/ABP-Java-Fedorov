@@ -79,7 +79,7 @@ public class Lab7 extends JFrame {
 
             currentQuestionIndex = index;
         } else {
-            JOptionPane.showMessageDialog(this, "Congratulations! You've answered all questions.");
+            JOptionPane.showMessageDialog(this, "Вітаю ти продовжуєш своє навчання на ПП");
             System.exit(0);
         }
     }
