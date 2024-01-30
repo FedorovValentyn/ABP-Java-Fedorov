@@ -3,7 +3,7 @@ package MyPackage;
 import java.util.ArrayList;
 
 public class Lab11 {
-    public static void lab11() {
+    public static void lab11() {                         //Варіант 12
 
     }
 

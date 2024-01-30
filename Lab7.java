@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Lab7 extends JFrame {
+public class Lab7 extends JFrame {                       //Варіант 12
 
     private JLabel questionLabel;
     private JButton[] answerButtons;

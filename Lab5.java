@@ -2,7 +2,7 @@ package MyPackage;
 
 import javax.swing.*;
 
-public class Lab5 extends javax.swing.JFrame {
+public class Lab5 extends javax.swing.JFrame {                  //Варіант 12
 
     public Lab5() {
         initComponents();
@@ -28,7 +28,7 @@ public class Lab5 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(400, 300));
+        jPanel1.setMaximumSize(new java.awt.Dimension(401, 301));
         jPanel1.setMinimumSize(new java.awt.Dimension(400, 300));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12));
@@ -73,9 +73,6 @@ public class Lab5 extends javax.swing.JFrame {
                 jLabel6PropertyChange(evt);
             }
         });
-
-
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -198,27 +195,7 @@ public class Lab5 extends javax.swing.JFrame {
 
     }
 
-    public static void main(String args[]) {
-
-
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Lab5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Lab5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Lab5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Lab5.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-
-
+    public static void lab5() {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -226,7 +203,6 @@ public class Lab5 extends javax.swing.JFrame {
             }
         });
     }
-
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

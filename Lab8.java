@@ -11,7 +11,7 @@ public class Lab8 {
     private JTextField textField1;
     private JTextField textField2;
 
-    public static void lab8() {
+    public static void lab8() {                                  //Варіант 12
         EventQueue.invokeLater(() -> {
             try {
                 Lab8 window = new Lab8();

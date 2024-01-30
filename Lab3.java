@@ -1,4 +1,4 @@
-package MyPackage;
+package MyPackage;                           //Варіант 12
 
 
                 //інтерфейс run

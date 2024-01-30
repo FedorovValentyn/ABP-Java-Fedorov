@@ -13,49 +13,39 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Lab10 extends JFrame {
+public class Lab10 extends JFrame {                                  //Варіант 12
     private JTextArea textArea;
     private JComboBox<String> fontComboBox;
     private JComboBox<Integer> sizeComboBox;
 
     public Lab10() {
-        // Заголовок вікна
         super("Text Editor");
 
-        // Ініціалізація та встановлення розмірів вікна
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Ініціалізація компонентів
         textArea = new JTextArea();
         JScrollPane scrollPane = new JScrollPane(textArea);
 
-        // Створення ComboBox для шрифту
         String[] fontNames = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
         fontComboBox = new JComboBox<>(fontNames);
 
-        // Створення ComboBox для розміру шрифту
         Integer[] fontSizes = {8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 36, 40};
         sizeComboBox = new JComboBox<>(fontSizes);
 
-        // Створення кнопок для збереження та відкриття файлу
         JButton saveButton = new JButton("Зберегти");
         JButton openButton = new JButton("Відкрити");
 
-        // Додавання компонентів на панель
         JPanel controlPanel = new JPanel();
         controlPanel.add(fontComboBox);
         controlPanel.add(sizeComboBox);
         controlPanel.add(saveButton);
         controlPanel.add(openButton);
 
-        // Додавання панелі з контрольними елементами вниз вікна
         add(controlPanel, BorderLayout.SOUTH);
 
-        // Додавання текстового поля на вікно
         add(scrollPane, BorderLayout.CENTER);
 
-        // Додавання обробників подій
         saveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,7 +60,6 @@ public class Lab10 extends JFrame {
             }
         });
 
-        // Додавання обробника подій для текстового поля для відслідковування змін
         textArea.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -90,25 +79,20 @@ public class Lab10 extends JFrame {
     }
 
     private void updateFont() {
-        // Отримання обраного шрифту та розміру з ComboBox
         String selectedFont = (String) fontComboBox.getSelectedItem();
         int selectedSize = (int) sizeComboBox.getSelectedItem();
 
-        // Встановлення стилю шрифта для текстового поля
         Font newFont = new Font(selectedFont, Font.PLAIN, selectedSize);
         textArea.setFont(newFont);
     }
 
     private void saveToFile() {
         try {
-            // Отримання введеного тексту
             String text = textArea.getText();
 
-            // Отримання обраного шрифту та розміру з ComboBox
             String selectedFont = (String) fontComboBox.getSelectedItem();
             int selectedSize = (int) sizeComboBox.getSelectedItem();
 
-            // Збереження тексту разом із характеристиками шрифта в файл "OUTPUT.txt"
             try (BufferedWriter writer = new BufferedWriter(new FileWriter("OUTPUT.txt"))) {
                 writer.write("Font: " + selectedFont + "\n");
                 writer.write("Size: " + selectedSize + "\n\n");
@@ -124,11 +108,9 @@ public class Lab10 extends JFrame {
 
     private void openFile() {
         try {
-            // Зчитування тексту з файлу "OUTPUT.txt"
             Path filePath = Paths.get("OUTPUT.txt");
             String fileContent = new String(Files.readAllBytes(filePath));
 
-            // Відображення тексту та характеристик шрифта у вікні редактора
             textArea.setText(fileContent);
             JOptionPane.showMessageDialog(this, "Текст успішно відкрито з файлу OUTPUT.txt", "Інформація", JOptionPane.INFORMATION_MESSAGE);
         } catch (IOException ex) {

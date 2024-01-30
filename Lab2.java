@@ -2,7 +2,7 @@ package MyPackage;
 
 import java.util.Scanner;
 
-public class Lab2 {
+public class Lab2 {                  //Варіант 12
 
     public static void lab2() {
         Scanner scan = new Scanner(System.in);

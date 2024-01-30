@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
 
-public class Lab9 extends JFrame {
+public class Lab9 extends JFrame {                           //Варіант 12
     private JTable table;
     private DefaultTableModel tableModel;
 

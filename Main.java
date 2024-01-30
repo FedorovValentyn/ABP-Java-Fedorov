@@ -26,14 +26,7 @@ public class Main {
                 Lab4.lab4();
             break;
             case 5 :
-                EventQueue.invokeLater(() -> {
-                    try {
-                        Lab5 lab5 = new Lab5();
-                        lab5.setVisible(true);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                });
+                Lab5.lab5();
             break;
             case 6:
                 Lab6.lab6();
