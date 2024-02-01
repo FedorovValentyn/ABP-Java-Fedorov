@@ -1,0 +1,25 @@
+<dependencies>
+    <!-- JOOQ dependencies -->
+    <dependency>
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq</artifactId>
+        <version>3.15.2</version> <!-- Use the latest version -->
+    </dependency>
+    <dependency>
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq-meta</artifactId>
+        <version>3.15.2</version> <!-- Use the same version as jooq -->
+    </dependency>
+    <dependency>
+        <groupId>org.jooq</groupId>
+        <artifactId>jooq-codegen</artifactId>
+        <version>3.15.2</version> <!-- Use the same version as jooq -->
+    </dependency>
+
+    <!-- MySQL Connector/J -->
+    <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>8.0.23</version> <!-- Use the latest version -->
+    </dependency>
+</dependencies>
