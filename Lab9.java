@@ -101,34 +101,42 @@ public class Lab9 extends JFrame {
         }
     }
 
-    private void addRecord() {                                                                                                        // метод додавання записів в таблицю
-        String newName = JOptionPane.showInputDialog(this, "Ввдеіть назву:");
+    private void addRecord() {
+        String newName = JOptionPane.showInputDialog(this, "Введіть назву:");
         String newPrice = JOptionPane.showInputDialog(this, "Введіть ціну:");
         String newId = JOptionPane.showInputDialog(this, "Введіть ID:");
         String newWasBought = JOptionPane.showInputDialog(this, "Введіть кількість, яку було поставлено:");
         String newSold = JOptionPane.showInputDialog(this, "Введіть кількість, яку продали:");
         String newIsAviable = JOptionPane.showInputDialog(this, "Введіть 1 чи доступний товар для купівлі:");
 
-
         String url = "jdbc:mysql://localhost:3306/fedorov";
         String username = "root";
         String password = "Valik25122005!";
 
-        try (Connection connection = DriverManager.getConnection(url, username, password);
-             PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO shop (name, price,id,wasBought,wasSold,isAviable) VALUES (?, ?, ?, ?, ?, ?)")) {
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            // Check if the ID already exists
+            PreparedStatement checkStmt = connection.prepareStatement("SELECT COUNT(*) FROM shop WHERE id = ?");
+            checkStmt.setString(1, newId);
+            ResultSet resultSet = checkStmt.executeQuery();
+            if (resultSet.next() && resultSet.getInt(1) > 0) {
+                JOptionPane.showMessageDialog(this, "Запис з таким ID вже існує.", "Помилка", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
 
-            preparedStatement.setString(1, newName);
-            preparedStatement.setString(2, newPrice);
-            preparedStatement.setString(3, newId);
-            preparedStatement.setString(4, newIsAviable);
-            preparedStatement.setString(5, newSold);
-            preparedStatement.setString(6, newWasBought);
-            preparedStatement.executeUpdate();
+            PreparedStatement insertStmt = connection.prepareStatement("INSERT INTO shop (name, price, id, wasBought, wasSold, isAviable) VALUES (?, ?, ?, ?, ?, ?)");
+            insertStmt.setString(1, newName);
+            insertStmt.setString(2, newPrice);
+            insertStmt.setString(3, newId);
+            insertStmt.setString(4, newWasBought);
+            insertStmt.setString(5, newSold);
+            insertStmt.setString(6, newIsAviable);
+            insertStmt.executeUpdate();
 
             loadFromDatabase();
 
         } catch (SQLException e) {
             e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "Помилка при додаванні запису: " + e.getMessage(), "Помилка", JOptionPane.ERROR_MESSAGE);
         }
     }
 
